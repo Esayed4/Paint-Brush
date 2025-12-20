@@ -6,60 +6,6 @@ import java.awt.Graphics2D;
 public abstract class Shape {
 
     final int x1,y1;
-    public int getX1() {
-        return x1;
-    }
-
-
-
-    public int getY1() {
-        return y1;
-    }
-
-
-
-    public int getX2() {
-        return x2;
-    }
-
-
-
-    public void setX2(int x2) {
-        this.x2 = x2;
-    }
-
-
-
-    public int getY2() {
-        return y2;
-    }
-
-
-
-    public void setY2(int y2) {
-        this.y2 = y2;
-    }
-
-
-
-    public Color getColor() {
-        return color;
-    }
-
-
-
-    public Boolean getFillflag() {
-        return fillflag;
-    }
-
-
-
-    public BasicStroke getStroke() {
-        return stroke;
-    }
-
-
-
     int x2,y2;
     final Color color;
     // final Font font;
