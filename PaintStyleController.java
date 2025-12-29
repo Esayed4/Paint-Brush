@@ -27,7 +27,7 @@ public class PaintStyleController extends JPanel{
         solid.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e){
                 if(solid.getState()){
-                    panel.currentfillflag=true;
+                    panel.setCurrentfillflag(true);
                 }
             }   
         });
@@ -37,7 +37,7 @@ public class PaintStyleController extends JPanel{
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (dashed.getState()){
-                    panel.currentfillflag=false;
+                    panel.setCurrentfillflag(false) ;
                 }
             }
             

@@ -44,7 +44,7 @@ public class PaintColorController extends JPanel{
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            paintBrushPanel.currentcolor = this.color;
+            paintBrushPanel.setCurrentcolor( this.color) ;
             paintBrushPanel.repaint();
         }
     }
