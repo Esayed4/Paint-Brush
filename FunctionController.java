@@ -2,6 +2,7 @@
 import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 // import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -39,18 +40,19 @@ public class FunctionController extends JPanel{
     public class ClearListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
-            paintBrushPanel.list.clear();
-            paintBrushPanel.repaint();
+             paintBrushPanel.setList( new ArrayList<Shape>());
+             paintBrushPanel.repaint();
         }
     }
     
     public class UnDoListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            int size=paintBrushPanel.list.size();
+            ArrayList<Shape> myList=paintBrushPanel.getList();
+            int size=myList.size();
             if(size>0)
-                paintBrushPanel.list.remove(size-1);
+                myList.remove(size-1);
+               
             paintBrushPanel.repaint();
         }
     }
