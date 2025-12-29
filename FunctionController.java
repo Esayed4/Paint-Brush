@@ -27,13 +27,7 @@ public class FunctionController extends JPanel{
        add(undoButton); 
        
        
-       JButton saveBtn = new JButton("Save");
-
-        saveBtn.addActionListener(e -> {
-            // Call the separate class and pass your panel reference
-            ImageSaver.savePanelAsPng(this.paintBrushPanel); 
-        });
- 
+        
     }
     
     
