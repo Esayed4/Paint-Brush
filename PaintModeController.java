@@ -1,6 +1,8 @@
 
 // import java.awt.BasicStroke;
-import java.awt.Button;
+// import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 // import java.awt.Color;
 // import java.awt.event.ActionEvent;
 // import java.awt.event.ActionListener;
@@ -8,19 +10,22 @@ import javax.swing.JPanel;
 
 public class PaintModeController extends JPanel {
 
-    private Button lineButton;
-    private Button rectangleButton;
-    private Button ovalButton;
-    private Button pencilButton;
-    private Button eraserButton;
+    private JButton lineButton;
+    private JButton rectangleButton;
+    private JButton ovalButton;
+    private JButton pencilButton;
+    private JButton eraserButton;
 
     //private PaintBrushPanel paintBrushPanel;
     public PaintModeController(PaintBrushPanel paintBrushPanel) {
-        lineButton = new Button("Line");
-        rectangleButton = new Button("Rectangle");
-        ovalButton = new Button("Oval");
-        pencilButton = new Button("Pencil");
-        eraserButton = new Button("Eraser");
+
+        // ImageIcon pencilicon = new ImageIcon("pencil.png");
+
+        lineButton = new JButton("Line");
+        rectangleButton = new JButton("Rectangle");
+        ovalButton = new JButton("Oval");
+        pencilButton = new JButton("Pencil");
+        eraserButton = new JButton("Eraser");
 
         //this.paintBrushPanel=paintBrushPanel;
         lineButton.addActionListener(e -> paintBrushPanel.setCurrentShape(new Line()));
@@ -29,6 +34,7 @@ public class PaintModeController extends JPanel {
         pencilButton.addActionListener(e -> paintBrushPanel.setCurrentShape(new Pencil()));
         eraserButton.addActionListener(e -> paintBrushPanel.setCurrentShape(new Eraser()));
 
+        add(new JLabel("                                                                            Shapes"));
         add(lineButton);
         add(rectangleButton);
         add(ovalButton);

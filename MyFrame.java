@@ -1,9 +1,11 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
-import javax.swing.JButton;
+import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 
 public class MyFrame extends JFrame {
 
@@ -12,55 +14,48 @@ public class MyFrame extends JFrame {
     PaintColorController myPaintColorController;
     PaintModeController myPaintModeController;
     PaintStyleController myPaintStyleController;
+    StrokeSlider strokeSlider;
 
     public MyFrame() {
-        // 1. Initialize the drawing panel (The Canvas)
+        
         panel = new PaintBrushPanel();
         panel.setBackground(Color.WHITE);
 
-        // 2. Initialize the controllers
+        
         myFunctionController = new FunctionController(panel);
         myPaintColorController = new PaintColorController(panel);
         myPaintModeController = new PaintModeController(panel);
         myPaintStyleController = new PaintStyleController(panel);
+        strokeSlider = new StrokeSlider(panel);
 
-        // 3. Create the Save Button
-        JButton saveBtn = new JButton("Save Drawing");
-        saveBtn.addActionListener(e -> {
-            ImageSaver.savePanelAsPng(panel); 
-        });
-        
-        
-        JButton uploadBtn = new JButton("Upload Image");
-        uploadBtn.addActionListener(e -> {
-            ImageLoader.uploadToPanel(panel);
-        });
 
-        // 4. Create a TOP TOOLBAR to hold all buttons
-        // This keeps the "drawing area" free of obstructions
-        JPanel topToolbar = new JPanel();
-        topToolbar.setLayout(new FlowLayout(FlowLayout.LEFT)); // Buttons line up left-to-right
-        
-        topToolbar.add(saveBtn);
-        topToolbar.add(uploadBtn);
-        topToolbar.add(myPaintColorController);
-        topToolbar.add(myPaintModeController);
-        topToolbar.add(myPaintStyleController);
-        topToolbar.add(myFunctionController);
 
-        // 5. Arrange the Frame
-        this.setLayout(new BorderLayout());
+        JPanel toolbar = new JPanel();
+        toolbar.setLayout(new GridLayout(2, 1));
+
+        JPanel actionstoolbar = new JPanel();
+        actionstoolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
+        actionstoolbar.add(myFunctionController);
+        actionstoolbar.add(myPaintModeController);
+
+        JPanel custoolbar = new JPanel();
+        custoolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
+        custoolbar.add(myPaintColorController);
+        //custoolbar.add(myPaintModeController);
+        custoolbar.add(myPaintStyleController);
+        custoolbar.add(strokeSlider);
+
+        actionstoolbar.setPreferredSize(new Dimension(800, 10));
+        custoolbar.setPreferredSize(new Dimension(800, 60));
         
-        // Add the toolbar to the NORTH (top)
-        this.add(topToolbar, BorderLayout.NORTH); 
-        
-        // Add the drawing panel to the CENTER (fills all remaining space)
+        toolbar.add(actionstoolbar); 
+        toolbar.add(custoolbar); 
+        this.add(toolbar, BorderLayout.NORTH);
         this.add(panel, BorderLayout.CENTER); 
-
-        // 6. Window settings
+ 
         this.setTitle("Paint Brush - Drawing Everywhere");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1000, 700); // Made it a bit wider to fit all controllers
+        this.setSize(2000, 2000); 
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }

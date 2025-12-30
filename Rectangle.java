@@ -22,7 +22,6 @@ public class Rectangle extends Shape{
         if (getFillflag()){
             g.fillRect(getX(), getY(), getWidth(), getHeight());
         }else{
-            
             g.drawRect(getX(), getY(), getWidth(), getHeight());
         }
     }

@@ -1,18 +1,17 @@
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.awt.BasicStroke;
-import java.awt.BorderLayout;
+// import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
-public class PaintBrushPanel extends JPanel {
 
+public class PaintBrushPanel extends JPanel {
     private ArrayList<Shape> list;
     private Shape currentShape;
     private Color currentcolor;
@@ -20,12 +19,14 @@ public class PaintBrushPanel extends JPanel {
     private float[] dashPattern = {10f, 5f};
     private boolean currentfillflag;
     private BufferedImage uploadedImage = null;
+    private boolean dottedflag;
 
     PaintBrushPanel() {
         list = new ArrayList<Shape>();
         currentcolor = Color.BLACK;
         currentfillflag = true;
-        currentstroke = new BasicStroke(2);
+        dottedflag = false;
+        currentstroke = new BasicStroke(5);
         currentShape = new Line();
 
         addMouseListener(new MouseListener() {
@@ -41,15 +42,17 @@ public class PaintBrushPanel extends JPanel {
                 currentShape.setFillflag(currentfillflag);
                 if (currentfillflag) {
                     currentShape.setStroke(currentstroke);
-                } else {
+                } else if(dottedflag) {
                     currentShape.setStroke(new BasicStroke(
-                            3f, // line thickness
+                            currentstroke.getLineWidth(), // line thickness
                             BasicStroke.CAP_BUTT, // line cap
                             BasicStroke.JOIN_MITER, // line join
                             10f, // miter limit
                             dashPattern, // dash array
                             0f // dash phase (start offset)
                     ));
+                } else{
+                    currentShape.setStroke(currentstroke);
                 }
                 repaint();
             }
@@ -175,5 +178,14 @@ public class PaintBrushPanel extends JPanel {
     public void setCurrentfillflag(boolean currentfillflag) {
         this.currentfillflag = currentfillflag;
     }
+
+    public boolean isDottedflag() {
+        return dottedflag;
+    }
+
+    public void setDottedflag(boolean dottedflag) {
+        this.dottedflag = dottedflag;
+    }
+
 
 }
