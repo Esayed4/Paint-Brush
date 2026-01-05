@@ -1,9 +1,9 @@
  
 # 🎨 Paint Brush Drawing Tool using Java
-A simple **Java Paint application** that allows users to draw, color, and manage shapes using different tools such as pencil, line, rectangle, oval, and eraser.
-
+A Java-based paint application that enables users to create, edit, and manage drawings using a variety of tools, including pencil, line, rectangle, oval, and eraser
 
 <img width="1750" height="877" alt="Image" src="https://github.com/user-attachments/assets/b7b4c9c2-c27a-4715-9f9a-89b7520a9739" />
+
 ---
  
 ## 📁 Project Structure
@@ -94,4 +94,12 @@ App.java
 
 ---
 
+## 👥 Contributors
+
+- **Omar Ayman**
+  - GitHub: https://github.com/maro222
+  - LinkedIn: https://www.linkedin.com/in/omar-ayman-farouk/
+- **Elsayed Nabil**
+  - GitHub: https://github.com/Esayed4  
+  - LinkedIn: https://www.linkedin.com/in/esayed-/
  
