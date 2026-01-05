@@ -1,3 +1,5 @@
+package controllers;
+
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.event.ItemEvent;
@@ -5,6 +7,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import view.*;
 
 
 

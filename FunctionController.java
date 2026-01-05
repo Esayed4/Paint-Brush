@@ -1,3 +1,5 @@
+package controllers;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -5,7 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 // import java.util.ArrayList;
 import javax.swing.JPanel;
-
+import view.*;
+import shapes.*;
 
 public class FunctionController extends JPanel{
     private JButton clearButton;

@@ -1,10 +1,12 @@
-import java.awt.BasicStroke;
+package controllers;
 
+import java.awt.BasicStroke;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import view.*;
 
 public class StrokeSlider extends JPanel{
 
