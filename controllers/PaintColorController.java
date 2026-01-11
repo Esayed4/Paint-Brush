@@ -1,3 +1,4 @@
+package controllers;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -6,6 +7,8 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import view.*;
+
 
 
 public class PaintColorController extends JPanel{

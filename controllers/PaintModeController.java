@@ -1,12 +1,10 @@
+package controllers;
 
-// import java.awt.BasicStroke;
-// import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-// import java.awt.Color;
-// import java.awt.event.ActionEvent;
-// import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import view.*;
+import shapes.*;
 
 public class PaintModeController extends JPanel {
 
